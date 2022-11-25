@@ -7,5 +7,6 @@ class pokemon(models.Model):
     
     
     name = fields.Char(string='Nombre del pokemon', required=True)
+    image= fields.Image(string="Image")
     description = fields.Text(string='Descripcion del pokemon')
     tipo_ids=fields.Many2many('pokedex.tipo',string="Tipo")
