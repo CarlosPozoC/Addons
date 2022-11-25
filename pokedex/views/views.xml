@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<!--pokemon_tree-->
+<record model="ir.ui.view" id="pokedex.pokemon_list_view">
+    <field name="name">pokedex.pokemon.view.tree</field>
+    <field name="model">pokedex.pokemon</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"></field>
+            <field name="description"></field>
+        </tree>
+    </field>
+</record>
+<!--tipo_tree-->
+<record model="ir.ui.view" id="pokedex.tipo_list_view">
+    <field name="name">pokedex.pokemon.view.tree</field>
+    <field name="model">pokedex.tipo</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"></field>
+            <field name="description"></field>
+        </tree>
+    </field>
+</record>
+<!--Action-->
+<record model="ir.actions.act_window" id="pokedex.pokemon_action_window">
+    <field name="name">pokemon</field>
+    <field name="res_model">pokedex.pokemon</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="pokedex.tipo_action_window">
+    <field name="name">tipo</field>
+    <field name="res_model">pokedex.tipo</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<!--Menus-->
+<menuitem name="pokedex" id="pokedex.root_menu"/>
+<menuitem name="pokemon" id="pokedex.pokemon_menu" parent="pokedex.root_menu" action="pokedex.pokemon_action_window"/>
+<menuitem name="tipo" id="pokedex.tipo_menu" parent="pokedex.root_menu" action="pokedex.tipo_action_window"/>
+</data>
+</odoo>
